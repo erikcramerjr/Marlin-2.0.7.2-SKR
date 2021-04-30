@@ -56,3 +56,14 @@
   #define Z_HARDWARE_SERIAL  MSerial4
   #define E0_HARDWARE_SERIAL MSerial4
 #endif
+// Hack to use LCD SD Card on BTT-TFT35-E3-V3.0 controller
+  
+  
+  //#ifdef CR10_STOCKDISPLAY
+  //#undef SDCARD_CONNECTION
+  //#define SDCARD_CONNECTION LCD
+  //#undef SD_DETECT_PIN
+  //#define SD_DETECT_PIN  PA8  //PT-DET GPIO pin
+  //#undef LCD_SDSS
+  //#define LCD_SDSS       PC12 //SERVOS GPIO pin
+//#endif

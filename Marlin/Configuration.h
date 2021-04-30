@@ -496,9 +496,9 @@
     #define DEFAULT_Ki_LIST {   1.1625,   1.1625 }
     #define DEFAULT_Kd_LIST {  56.2300,  56.2300 }
   #else
-    #define DEFAULT_Kp  16.1300
-    #define DEFAULT_Ki   1.1625
-    #define DEFAULT_Kd  56.2300
+#define DEFAULT_Kp 13.67
+#define DEFAULT_Ki 0.93
+#define DEFAULT_Kd 50.12
   #endif
 #endif // PIDTEMP
 
@@ -535,10 +535,10 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  // BTT002 MK3S
-  #define DEFAULT_bedKp 126.13
-  #define DEFAULT_bedKi 4.30
-  #define DEFAULT_bedKd 924.76
+  // Pings MK3S
+#define DEFAULT_bedKp 56.62
+#define DEFAULT_bedKi 3.78
+#define DEFAULT_bedKd 565.86
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -986,7 +986,7 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 5
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_SPEED (10000)
@@ -1083,13 +1083,13 @@
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR true
-#define INVERT_Y_DIR false
+#define INVERT_Y_DIR true
 #define INVERT_Z_DIR false
 
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR false
+#define INVERT_E0_DIR true
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -1118,7 +1118,7 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 255
+#define X_BED_SIZE 24
 #define Y_BED_SIZE 212.5
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
@@ -1277,7 +1277,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 7
+  #define GRID_MAX_POINTS_X 3
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -1346,10 +1346,10 @@
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
-//#define LEVEL_BED_CORNERS
+#define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
-  #define LEVEL_CORNERS_INSET_LFRB { 30, 30, 30, 30 } // (mm) Left, Front, Right, Back insets
+  #define LEVEL_CORNERS_INSET_LFRB { 25, 25, 25, 25 } // (mm) Left, Front, Right, Back insets
   #define LEVEL_CORNERS_HEIGHT      0.0   // (mm) Z height of nozzle at leveling points
   #define LEVEL_CORNERS_Z_HOP       4.0   // (mm) Z height of nozzle between leveling points
   //#define LEVEL_CENTER_TOO              // Move to the center after the last corner
@@ -1384,8 +1384,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing
+ // #define Z_SAFE_HOMING_X_POINT 30  // X point for Z homing
+  #define Z_SAFE_HOMING_Y_POINT 9  // Y point for Z homing
 #endif
 
 // Homing speeds (mm/min)
