@@ -1384,7 +1384,7 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
- // #define Z_SAFE_HOMING_X_POINT 30  // X point for Z homing
+  #define Z_SAFE_HOMING_X_POINT 30  // X point for Z homing
   #define Z_SAFE_HOMING_Y_POINT 9  // Y point for Z homing
 #endif
 
